@@ -2,5 +2,5 @@
   {"id": 1, "name": "Anu", "role": "Student"},
   {"id": 2, "name": "Ben", "role": "Mentor"},
   {"id": 3, "name": "Cara", "role": "Student"},
-  {"id": 4, "name": "Mathu", "role": "Student"}
+  {"id": 4, "name": "Mathu", "role": "staff"}
 ]
