@@ -81,9 +81,23 @@ def signup():
 def success():
     return render_template("success.html", message="Data submitted successfully")
 
+<<<<<<< HEAD
 @app.route('/todo')
 def todo():
     return render_template('todo.html')
+=======
+client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
+db = client["todo_db"]
+
+@app.route('/submittodoitem', methods=['POST'])
+def submit_todo_item():
+    data = request.get_json(silent=True) or request.form
+    db.todos.insert_one({
+        "itemName": data.get("itemName"),
+        "itemDescription": data.get("itemDescription")
+    })
+    return jsonify({"message": "Item stored"}), 201
+>>>>>>> master_2
 
 if __name__ == '__main__':
     app.run(debug=True)
